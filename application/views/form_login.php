@@ -16,10 +16,16 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">FORM LOGIN</h1>
                                     </div>
+
+
+                                    <?php echo $this->session->flashdata('message') ?>
                                     <?php echo $this->session->flashdata('pesan') ?>
+                                    <?php echo $this->session->flashdata('pesan3') ?>
+
+
                                     <form method="post" action="<?php echo base_url('auth/login') ?>" class="user">
                                         <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Maukan Username Anda" name="username">
+                                            <input type="text" class="form-control form-control-user" id="exampleInputUsername" placeholder="Masukan Username Anda" name="username">
                                             <?php echo form_error('username', '<div class="text-danger small ml-2">', '</div>') ?>
                                         </div>
                                         <div class="form-group">
@@ -28,7 +34,6 @@
                                         </div>
                                         <button type="submit" class="btn btn-sm btn-success form-control">LOGIN</button>
                                     </form>
-                                    <hr>
                                     <div class="text-center">
                                         <a class="small" href="#">Lupa Password?</a>
                                     </div>

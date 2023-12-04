@@ -34,7 +34,8 @@ class Dashboard extends CI_Controller
     }
     public function detail_keranjang()
     {
-        $this->load->view('templates/header');
+        $data['judul'] = 'Detail keranjang';
+        $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar');
         $this->load->view('keranjang');
         $this->load->view('templates/footer');
@@ -46,7 +47,8 @@ class Dashboard extends CI_Controller
     }
     public function pembayaran()
     {
-        $this->load->view('templates/header');
+        $data['judul'] = 'pembayaran';
+        $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar');
         $this->load->view('pembayaran');
         $this->load->view('templates/footer');
@@ -54,10 +56,11 @@ class Dashboard extends CI_Controller
 
     public function proses_pesanan()
     {
+        $data['judul'] = 'proses pesanan';
         $is_processed = $this->model_invoice->index();
         if ($is_processed) {
             $this->cart->destroy();
-            $this->load->view('templates/header');
+            $this->load->view('templates/header', $data);
             $this->load->view('templates/sidebar');
             $this->load->view('proses_pesanan');
             $this->load->view('templates/footer');
@@ -67,9 +70,10 @@ class Dashboard extends CI_Controller
     }
     public function detail($id)
     {
+        $data['judul'] = 'detail obat';
         $data['obat'] = $this->model_obat->detail_obat($id);
         $this->cart->destroy();
-        $this->load->view('templates/header');
+        $this->load->view('templates/header', $data);
         $this->load->view('templates/sidebar');
         $this->load->view('detail_obat', $data);
         $this->load->view('templates/footer');
