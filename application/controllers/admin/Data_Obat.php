@@ -19,8 +19,9 @@ class Data_Obat extends CI_Controller
     }
     public function index()
     {
+        $data['judul'] = 'data obat';
         $data['obat'] = $this->model_obat->tampil_data()->result();
-        $this->load->view('templates_admin/header');
+        $this->load->view('templates_admin/header', $data);
         $this->load->view('templates_admin/sidebar');
         $this->load->view('admin/data_obat', $data);
         $this->load->view('templates_admin/footer');
@@ -61,9 +62,10 @@ class Data_Obat extends CI_Controller
 
     public function edit($id)
     {
+        $data['judul'] = 'edit obat';
         $where = array('id' => $id);
         $data['obat'] = $this->model_obat->edit_obat($where, 'obat')->result();
-        $this->load->view('templates_admin/header');
+        $this->load->view('templates_admin/header', $data);
         $this->load->view('templates_admin/sidebar');
         $this->load->view('admin/edit_obat', $data);
         $this->load->view('templates_admin/footer');
