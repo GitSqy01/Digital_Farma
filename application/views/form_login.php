@@ -35,7 +35,7 @@
                                         <button type="submit" class="btn btn-sm btn-success form-control">LOGIN</button>
                                     </form>
                                     <div class="text-center">
-                                        <a class="small" href="#">Lupa Password?</a>
+                                        <a class="small" href="<?= base_url('Registrasi/lupapassword'); ?>">Lupa Password?</a>
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="<?php echo base_url('Registrasi/index'); ?>">Belum punya akun?Daftar!</a>
